@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Fancybox CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+    />
+    <!-- jQuery (necessary for Fancybox) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Fancybox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <style>
+      /* gallery */
+      .gallery-wrapper {
+        margin-top: -35px;
+      }
+
+      .gallery-item {
+        margin-top: 35px;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        border: 2px solid rgba(206, 20, 70, 0.2); /* Subtle border */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Increased shadow */
+        transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for shadow and transform */
+      }
+
+      .gallery-item:hover {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
+        transform: scale(1.03); /* Slight zoom effect on hover */
+      }
+
+      .gallery-item.home img {
+        aspect-ratio: 3/2 !important;
+        object-fit: cover;
+        border-radius: 5px; /* Ensure images inherit border-radius */
+      }
+
+      .gallery-item:hover .gallery-item-overlay {
+        opacity: 1;
+      }
+
+      .gallery-item:hover .gallery-item-overlay i {
+        transform: scale(1);
+      }
+
+      .gallery-item .gallery-item-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(206, 20, 70, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.25s;
+      }
+
+      .gallery-item .gallery-item-overlay i {
+        font-size: 50px;
+        color: #fff;
+        transform: scale(0);
+        transition: all 0.35s;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 200px;
+        border-radius: 5px; /* Ensure images have rounded corners */
+      }
+
+      @media only screen and (min-width: 1201px) and (max-width: 1400px) {
+        .tour-package-details
+          .package-details-tabs
+          .tab-switchers
+          .nav-item
+          .nav-link {
+          padding: 8px 15px;
+          font-size: 18px;
+        }
+
+        .package-sidebar .widget-recent-package-entries .package-sm .info h6 {
+          font-size: 14px;
+        }
+
+        .gallery-item {
+          margin-top: 35px;
+        }
+      }
+
+      @media only screen and (min-width: 992px) and (max-width: 1200px) {
+        .gallery-item {
+          margin-top: 26px;
+        }
+      }
+
+      @media only screen and (max-width: 768px) {
+        .gallery-item {
+          margin-top: 20px; /* Reduce margin for smaller screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div
+          class="text-center mx-auto mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 700px"
+        >
+          <h1 class="mb-3">!! Gallery !!</h1>
+          <p>
+            Take a look at the beauty and wildness of this park even before
+            visiting.
+          </p>
+        </div>
+        <div class="row g-3">
+          <div class="col-lg-3 col-md-6">
+            <div class="gallery-item home">
+              <a
+                href="https://cdn.pixabay.com/photo/2013/07/30/03/14/istanbul-168774_640.jpg"
+                data-fancybox="gallery"
+                data-caption="Image 1"
+              >
+                <img
+                  src="https://cdn.pixabay.com/photo/2013/07/30/03/14/istanbul-168774_640.jpg"
+                  alt="Image 1"
+                />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-eye-fill"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="gallery-item home">
+              <a
+                href="https://media.istockphoto.com/id/1495956202/photo/blurred-motion-of-people-in-art-gallery.jpg?s=612x612&w=0&k=20&c=Y1ZrOnFhZ-vs-uV1EFqwYjfO5aAOOYkRM51k6SblvbU="
+                data-fancybox="gallery"
+                data-caption="Image 2"
+              >
+                <img
+                  src="https://media.istockphoto.com/id/1495956202/photo/blurred-motion-of-people-in-art-gallery.jpg?s=612x612&w=0&k=20&c=Y1ZrOnFhZ-vs-uV1EFqwYjfO5aAOOYkRM51k6SblvbU="
+                  alt="Image 2"
+                />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-eye-fill"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="gallery-item home">
+              <a
+                href="https://images.pexels.com/photos/3004909/pexels-photo-3004909.jpeg?cs=srgb&dl=pexels-suzyhazelwood-3004909.jpg&fm=jpg"
+                data-fancybox="gallery"
+                data-caption="Image 3"
+              >
+                <img
+                  src="https://images.pexels.com/photos/3004909/pexels-photo-3004909.jpeg?cs=srgb&dl=pexels-suzyhazelwood-3004909.jpg&fm=jpg"
+                  alt="Image 3"
+                />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-eye-fill"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="gallery-item home">
+              <a
+                href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEoF68Rmdx05C1tB3GSvZfy2W9nnfb0AQJtA&s"
+                data-fancybox="gallery"
+                data-caption="Image 4"
+              >
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEoF68Rmdx05C1tB3GSvZfy2W9nnfb0AQJtA&s"
+                  alt="Image 4"
+                />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-eye-fill"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="gallery-item home">
+              <a
+                href="https://images.unsplash.com/photo-1507643179773-3e975d7ac515?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXJ0JTIwZ2FsbGVyeXxlbnwwfHwwfHx8MA%3D%3D"
+                data-fancybox="gallery"
+                data-caption="Image 5"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1507643179773-3e975d7ac515?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXJ0JTIwZ2FsbGVyeXxlbnwwfHwwfHx8MA%3D%3D"
+                  alt="Image 5"
+                />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-eye-fill"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="gallery-item home">
+              <a
+                href="https://images.pexels.com/photos/1674049/pexels-photo-1674049.jpeg?cs=srgb&dl=pexels-atlasworld-1674049.jpg&fm=jpg"
+                data-fancybox="gallery"
+                data-caption="Image 6"
+              >
+                <img
+                  src="https://images.pexels.com/photos/1674049/pexels-photo-1674049.jpeg?cs=srgb&dl=pexels-atlasworld-1674049.jpg&fm=jpg"
+                  alt="Image 6"
+                />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-eye-fill"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="gallery-item home">
+              <a
+                href="https://media.istockphoto.com/id/1854857525/photo/in-an-art-center-visitors-looks-at-the-artists-collection.webp?b=1&s=170667a&w=0&k=20&c=bJBst4nMi2PJv8nJD-gBFY1eV7B542JyI6wUHt4FlII="
+                data-fancybox="gallery"
+                data-caption="Image 7"
+              >
+                <img
+                  src="https://media.istockphoto.com/id/1854857525/photo/in-an-art-center-visitors-looks-at-the-artists-collection.webp?b=1&s=170667a&w=0&k=20&c=bJBst4nMi2PJv8nJD-gBFY1eV7B542JyI6wUHt4FlII="
+                  alt="Image 7"
+                />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-eye-fill"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="gallery-item home">
+              <a
+                href="https://media.istockphoto.com/id/609908294/photo/khao-yai-art-museum.jpg?s=612x612&w=0&k=20&c=xU2O88y8pQHXfnb0xxrTucPNnDuL3A5V5wFcr0e15OI="
+                data-fancybox="gallery"
+                data-caption="Image 8"
+              >
+                <img
+                  src="https://media.istockphoto.com/id/609908294/photo/khao-yai-art-museum.jpg?s=612x612&w=0&k=20&c=xU2O88y8pQHXfnb0xxrTucPNnDuL3A5V5wFcr0e15OI="
+                  alt="Image 8"
+                />
+                <div class="gallery-item-overlay">
+                  <i class="bi bi-eye-fill"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Initialize Fancybox -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $('[data-fancybox="gallery"]').fancybox({
+          // You can customize Fancybox options here
+        });
+      });
+    </script>
+  </body>
+</html>

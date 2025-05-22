@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Curry Puff</h2>
+
+      <div class="swiper-container swiper-filter">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a data-filter="" class="swiper-active">first</a>
+          </div>
+          <div class="swiper-slide">
+            <a data-filter=".filter1">second</a>
+          </div>
+          <div class="swiper-slide">
+            <a data-filter=".filter2">Third</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-container swiper-product">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide filter1">filter1</div>
+          <div class="swiper-slide filter2">filter2</div>
+          <div class="swiper-slide filter1">filter1</div>
+          <div class="swiper-slide filter1">filter1</div>
+          <div class="swiper-slide filter1">filter1</div>
+          <div class="swiper-slide filter1">filter1</div>
+        </div>
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <!--<div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div-->
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="style.js"></script>
+  </body>
+</html>

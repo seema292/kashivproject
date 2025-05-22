@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .home-demo {
+        text-align: center;
+      }
+      .home-demo h3 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+      .home-demo .item-testimonial {
+        background: #ff3f4d;
+        padding: 2rem;
+        border-radius: 8px;
+        color: #fff;
+        position: relative;
+      }
+      .home-demo h2 {
+        color: #fff;
+        text-align: center;
+        padding: 2rem 0;
+        margin: 0;
+        font-style: italic;
+        font-weight: 300;
+      }
+
+      .owl-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+      }
+      .owl-nav .owl-prev,
+      .owl-nav .owl-next {
+        background-color: #fff;
+        color: #ff3f4d;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .owl-nav .owl-prev:hover,
+      .owl-nav .owl-next:hover {
+        background-color: #ff3f4d;
+        color: #fff;
+      }
+      .owl-nav .owl-prev {
+        margin-left: 1rem;
+      }
+      .owl-nav .owl-next {
+        margin-right: 1rem;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+  </head>
+  <body>
+    <div class="home-demo">
+      <h3>Carousel</h3>
+      <div class="owl-carousel owl-theme">
+        <div class="item-testimonial">
+          <h2>Swipe</h2>
+        </div>
+        <div class="item-testimonial">
+          <h2>Drag</h2>
+        </div>
+        <div class="item-testimonial">
+          <h2>Responsive</h2>
+        </div>
+        <div class="item-testimonial">
+          <h2>CSS3</h2>
+        </div>
+        <div class="item-testimonial">
+          <h2>Fast</h2>
+        </div>
+        <div class="item-testimonial">
+          <h2>Easy</h2>
+        </div>
+        <div class="item-testimonial">
+          <h2>Free</h2>
+        </div>
+        <div class="item-testimonial">
+          <h2>Upgradable</h2>
+        </div>
+        <div class="item-testimonial">
+          <h2>Tons of options</h2>
+        </div>
+        <div class="item-testimonial">
+          <h2>Infinity</h2>
+        </div>
+        <div class="item-testimonial">
+          <h2>Auto Width</h2>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+      $(function () {
+        var owl = $(".owl-carousel");
+        owl.owlCarousel({
+          items: 3,
+          margin: 10,
+          autoplay: true,
+          loop: true,
+          nav: true,
+          navText: [
+            '<button class="owl-prev">‹</button>',
+            '<button class="owl-next">›</button>',
+          ],
+          // smartSpeed: 5000,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            768: {
+              items: 2,
+            },
+            1024: {
+              items: 3,
+            },
+            1060: {
+              items: 4,
+            },
+          },
+        });
+      });
+      console.log(typeof null + "data");
+    </script>
+  </body>
+</html>

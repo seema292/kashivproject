@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="timeline.css" />
+    <style>
+      .extra-div > img {
+        height: 200px;
+        width: 100%;
+        margin-top: -40px;
+      }
+      .extra-div {
+        position: absolute;
+        width: calc(50% - 20px);
+        margin-bottom: 10px;
+      }
+
+      .left > .extra-div.left1 {
+        left: 961px;
+        transform: translateX(-100%);
+      }
+      .extra-div.right1 {
+        left: -53%;
+        transform: translateX(0);
+      }
+      .extra-div.right1 > img {
+        margin-top: 1px;
+        height: 200px;
+      }
+      .container-t {
+        width: 50%;
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+      }
+
+      /* .container-t::after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        right: -17px;
+        width: 25px;
+        height: 25px;
+        z-index: 1;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 5px solid #e5bf15;
+      } */
+
+      /* .left {
+        left: 0;
+      }
+
+      .right {
+        left: 50%;
+      } */
+
+      .left::before {
+        content: " ";
+        position: absolute;
+        top: 22px;
+        right: 30px;
+        width: 0;
+        height: 0;
+        z-index: 1;
+        border: medium solid #7b2a2a;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent #c81616;
+      }
+
+      .right::before {
+        content: " ";
+        position: absolute;
+        top: 22px;
+        left: 30px;
+        width: 0;
+        height: 0;
+        z-index: 1;
+        border: medium solid #6b0d0d;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #7f2a2a transparent transparent;
+      }
+
+      /* .right::after {
+        left: -18px;
+      }
+
+      .content-t {
+        padding: 20px 30px;
+        position: relative;
+        border-radius: 6px;
+        background-color: #fff;
+      }
+      img {
+        height: 100px;
+        width: 100%;
+      } */
+      @media screen and (max-width: 600px) {
+        /* .timeline::after {
+          left: 31px;
+        }
+
+        .container-t {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .container-t::before {
+          left: 60px;
+          border: medium solid #fff;
+          border-width: 10px 10px 10px 0;
+          border-color: transparent #fff transparent transparent;
+        }
+
+        .left::after,
+        .right::after {
+          left: 14px;
+        }
+
+        .right {
+          left: 0%;
+        } */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="timeline">
+      <div class="container-t left">
+        <div class="extra-div left1">
+          <img
+            src="https://businessanalystmentor.com/wp-content/uploads/2020/12/119711056_s.jpg"
+            alt=""
+          />
+        </div>
+        <div class="content-t">
+          <h2>Requirement Gathering -</h2>
+          <p>
+            First, we will ask you about your requirements, goals, etc. This is
+            the first step and it’s all about listening to you and asking you
+            questions related to gathering information so that we can align with
+            your vision.
+          </p>
+        </div>
+      </div>
+      <div class="container-t right">
+        <div class="extra-div right1">
+          <img
+            src="https://businessanalystmentor.com/wp-content/uploads/2020/12/119711056_s.jpg"
+            alt=""
+          />
+        </div>
+        <div class="content-t">
+          <h2>Mock-up -</h2>
+          <p>
+            Before starting the development, we create a visual print of the
+            project and discuss it with our customers. This helps in giving a
+            sneak peek at the layout, design, and functionality. After which we
+            do a settlement with the client to make sure we give what they want.
+          </p>
+        </div>
+      </div>
+      <div class="container-t left">
+        <div class="extra-div left">
+          <!-- Content for the extra div, if any -->
+          Extra content before the Design & Development section
+        </div>
+        <div class="content-t">
+          <h2>Design & Development -</h2>
+          <p>
+            Our frontend and backend developers make stunning designs and
+            visuals and build user-friendly, responsive, and interactive
+            websites that are secure and clean core. We keep everything best so
+            that our client is satisfied with the final product.
+          </p>
+        </div>
+      </div>
+      <div class="container-t right">
+        <div class="extra-div right">
+          <!-- Content for the extra div, if any -->
+          Extra content before the Testing and Deployment section
+        </div>
+        <div class="content-t">
+          <h2>Testing and Deployment -</h2>
+          <p>
+            Quality is the most important thing and we make sure that we deliver
+            a flawless product. We securely test every aspect of the project
+            from functionality to performance and make sure that it works
+            properly.
+          </p>
+        </div>
+      </div>
+      <div class="container-t left">
+        <div class="extra-div left">
+          <!-- Content for the extra div, if any -->
+          Extra content before the Launching section
+        </div>
+        <div class="content-t">
+          <h2>Launching -</h2>
+          <p>
+            We take your project live, making it available to your audience. But
+            our support doesn’t end there. We ensure that everything runs
+            smoothly and assist our customers with any post-launch needs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

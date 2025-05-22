@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Include Swiper library CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap");
+      /* body {
+        font-size: 17px;
+        line-height: 30px;
+        font-weight: 400;
+        -moz-osx-font-smoothing: grayscale;
+        word-break: break-word;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Epilogue", sans-serif;
+        margin: 0;
+        overflow-x: hidden;
+        background: #eee;
+      }
+      body,
+      div {
+        margin: 0;
+        padding: 0;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      } */
+
+      /* Full Parallax Slider */
+      .creative-parallax--slider .f-slider-layer {
+        position: relative;
+      }
+      .creative-parallax--slider .swiper-slide.swiper-slide-active:before {
+        content: "";
+        width: 475px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 3%;
+        transform: translateX(-50%) skew(-20deg, 0deg);
+        z-index: 1;
+        opacity: 0.4;
+        background-color: green;
+        animation-name: fadeInTwo;
+        animation-duration: 2.3s;
+        animation-delay: 0s;
+      }
+      .creative-parallax--slider .f-slider-layer img {
+        width: 100%;
+        height: 80vh;
+        vertical-align: middle;
+      }
+      .creative-parallax--slider .f-slider-layer:before {
+        content: "";
+        background: #000;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0.5;
+      }
+      .creative-parallax--slider .f-slider-layer:after {
+        background-color: green;
+        content: "";
+        width: 280px;
+        height: 540px;
+        position: absolute;
+        top: 60%;
+        right: 1.5%;
+        transform: translate(-50%, -50%) skew(-20deg, 0deg);
+        z-index: 1;
+      }
+      .creative-parallax--slider .swiper-slide-active .f-slider-layer:after {
+        animation-name: fadeInThree;
+        animation-duration: 2.3s;
+        animation-delay: 0s;
+      }
+      .creative-parallax--slider .f-slider-layer .f-slider-one-data {
+        position: absolute;
+        top: 60%;
+        transform: translateY(-50%);
+        left: 16%;
+        width: 40%;
+        z-index: 9;
+      }
+      .creative-parallax--slider .f-slider-one-data h1 {
+        font-size: 67px;
+        line-height: 87px;
+        color: #fff;
+        margin-bottom: 10px;
+        margin-top: 0px;
+        opacity: 0;
+      }
+      .creative-parallax--slider .swiper-slide-active .f-slider-one-data h1 {
+        transition: opacity 0.5s ease, filter 0.5s ease;
+        animation: fadeInUp 1s ease forwards;
+        animation-delay: 1s;
+      }
+      .f-slider-layer .f-slider-one-data p {
+        font-size: 20px;
+        line-height: 30px;
+        color: #fff;
+        margin-bottom: 55px;
+        width: 95%;
+        font-weight: 400;
+        opacity: 0;
+      }
+      .swiper-slide-active .f-slider-layer .f-slider-one-data p {
+        transition: opacity 0.5s ease, filter 0.5s ease;
+        animation: fadeInUp 1s ease forwards;
+        animation-delay: 1.5s;
+      }
+      .f-slider-layer .slide-btn {
+        text-decoration: none;
+        background-color: green;
+        padding: 18px 70px 18px 50px;
+        font-size: 16px;
+        font-family: Epilogue, sans-serif;
+        color: #000;
+        display: inline-flex;
+        position: relative;
+        border: 2px solid green;
+        font-weight: 700;
+        transition: 0.3s ease-in-out;
+        opacity: 0;
+      }
+      .swiper-slide-active .f-slider-layer .slide-btn {
+        transition: opacity 0.5s ease, filter 0.5s ease;
+        animation: fadeInUp 1s ease forwards;
+        animation-delay: 2s;
+      }
+      .f-slider-layer .slide-btn:hover {
+        background-color: transparent;
+        color: #fff;
+      }
+      .f-slider-layer .slide-btn:after {
+        content: "";
+        width: 30px;
+        height: 100%;
+        position: absolute;
+        top: -2px;
+        right: -32px;
+        background: transparent;
+        border-left: 0 solid transparent;
+        border-right: 30px solid transparent;
+        border-top: 65px solid green;
+      }
+      .f-slider-layer .slide-btn i {
+        width: 40px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: -14px;
+        z-index: 1;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        transition: 0.5s ease-in-out;
+      }
+      .f-slider-layer .slide-btn:hover i {
+        color: #000;
+        width: 45px;
+      }
+      .f-slider-layer .slide-btn i:after {
+        content: "";
+        background: #000;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        transform: skew(-24deg, 0deg);
+        transition: 0.5s ease-in-out;
+      }
+      .f-slider-layer .slide-btn:hover i:after {
+        background-color: green;
+      }
+      .swiper-nav {
+        position: absolute;
+        bottom: 10%;
+        right: 0;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+      }
+      .swiper-nav button {
+        width: 80px;
+        height: 115px;
+        background: transparent;
+        color: #fff;
+        border: 0;
+        position: relative;
+        z-index: 0;
+        border-color: green;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+      }
+      .swiper-nav button:first-child {
+        margin-right: 10px;
+      }
+      .swiper-nav button:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border: 2px solid;
+        transform: skew(-23deg, 0deg);
+        border-color: green;
+      }
+      .swiper-nav button:hover:before {
+        border-color: #c1c1c1;
+      }
+      @keyframes fadeInThree {
+        0% {
+          opacity: 0;
+        }
+        40% {
+          opacity: 0.2;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(100px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInTwo {
+        0% {
+          opacity: 0;
+          transform: translateX(-50%) skew(-20deg, 0deg);
+        }
+
+        40% {
+          opacity: 0;
+          transform: translateX(-30%) skew(-20deg, 0deg);
+        }
+        100% {
+          opacity: 0.4;
+          transform: translateX(-50%) skew(-20deg, 0deg);
+        }
+      }
+
+      /* ===================== RESPONSIVE IPAD PRO ============================= */
+      @media (max-width: 1366px) {
+        .creative-parallax--slider .f-slider-layer .f-slider-one-data {
+          width: 60%;
+          left: 5%;
+          top: 50%;
+        }
+        .creative-parallax--slider .swiper-slide.swiper-slide-active:before {
+          width: 265px;
+        }
+        .creative-parallax--slider .f-slider-layer:after {
+          width: 185px;
+          height: 75%;
+          right: 6.5%;
+          top: 50%;
+        }
+        .creative-parallax--slider .f-slider-one-data h1 {
+          font-size: 50px;
+          line-height: 60px;
+        }
+      }
+      /* ===================== RESPONSIVE IPAD ============================= */
+      @media (max-width: 992px) {
+        .creative-parallax--slider .f-slider-layer .f-slider-one-data {
+          width: 65%;
+        }
+        .creative-parallax--slider .f-slider-one-data h1 {
+          font-size: 50px;
+          line-height: 60px;
+        }
+      }
+
+      /* ===================== RESPONSIVE IPAD ============================= */
+      @media (max-width: 767px) {
+        .creative-parallax--slider .f-slider-layer .f-slider-one-data {
+          width: 90%;
+          top: 40%;
+          text-align: center;
+        }
+        .creative-parallax--slider .f-slider-one-data h1 {
+          font-size: 30px;
+          line-height: 40px;
+        }
+        .f-slider-layer .f-slider-one-data p {
+          font-size: 15px;
+          line-height: 25px;
+        }
+        .creative-parallax--slider .swiper-slide.swiper-slide-active:before {
+          right: -100%;
+        }
+        .creative-parallax--slider .f-slider-layer:after {
+          display: none;
+        }
+        .f-slider-layer .slide-btn {
+          padding: 13px 55px 13px 25px;
+        }
+        .swiper-nav {
+          left: 50%;
+          transform: translate(-50%, -50%);
+          right: unset;
+          bottom: 2%;
+        }
+        .swiper-nav button {
+          width: 50px;
+          height: 50px;
+          border-width: 1px;
+          transform: unset;
+        }
+        .swiper-nav button:before {
+          transform: unset;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section
+      class="creative-parallax--slider"
+      style="background: black; min-height: 100vh"
+    >
+      <div class="creative-container">
+        <div class="swiper swiper-container parallax-slider">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="f-slider-layer">
+                <img
+                  src="https://as2.ftcdn.net/v2/jpg/02/63/04/43/1000_F_263044355_kzoLByQ9SbncIn8yrzVn8HCVNOvJGWIq.jpg"
+                  alt="Builty Innovative &amp; Industrial Solutions"
+                />
+                <div class="f-slider-one-data">
+                  <h1>Builty Innovative &amp; Industrial Solutions</h1>
+                  <p>
+                    I specialize in web development, focusing on creating
+                    dynamic and visually stunning digital solutions. Let me
+                    bring your ideas to life.
+                  </p>
+                  <a class="slide-btn" href="#"
+                    >Book Now<i class="fa-solid fa-angles-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="f-slider-layer">
+                <img
+                  src="https://as2.ftcdn.net/v2/jpg/02/63/04/43/1000_F_263044355_kzoLByQ9SbncIn8yrzVn8HCVNOvJGWIq.jpg"
+                  alt="Create the Building You Want Here"
+                />
+                <div class="f-slider-one-data">
+                  <h1>Create the Building You Want Here</h1>
+                  <p>
+                    I specialize in web development, focusing on creating
+                    dynamic and visually stunning digital solutions. Let me
+                    bring your ideas to life.
+                  </p>
+                  <a class="slide-btn" href="#"
+                    >Book Now<i class="fa-solid fa-angles-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="f-slider-layer">
+                <img
+                  src="https://as1.ftcdn.net/v2/jpg/02/70/35/00/1000_F_270350073_WO6yQAdptEnAhYKM5GuA9035wbRnVJSr.jpg"
+                  alt="A Better Way To Build Your Dreams"
+                />
+                <div class="f-slider-one-data">
+                  <h1>A Better Way To Build Your Dreams</h1>
+                  <p>
+                    I specialize in web development, focusing on creating
+                    dynamic and visually stunning digital solutions. Let me
+                    bring your ideas to life.
+                  </p>
+                  <a class="slide-btn" href="#"
+                    >Book Now<i class="fa-solid fa-angles-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-nav">
+            <button
+              class="swiper-nav-prev"
+              tabindex="0"
+              aria-label="Previous slide"
+            >
+              <i class="fa-solid fa-angles-left"></i>
+            </button>
+            <button
+              class="swiper-nav-next"
+              tabindex="0"
+              aria-label="Next slide"
+            >
+              <i class="fa-solid fa-angles-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Include Swiper library JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        var swiper = new Swiper(".parallax-slider", {
+          speed: 1000,
+          parallax: true,
+          loop: true,
+          autoplay: {
+            delay: 4000, // Adjust autoplay delay as needed
+            disableOnInteraction: false,
+          },
+          grabCursor: true,
+          effect: "creative",
+          creativeEffect: {
+            prev: {
+              shadow: true,
+              translate: ["-120%", 0, -500],
+            },
+            next: {
+              shadow: true,
+              translate: ["120%", 0, -500],
+            },
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-nav-next",
+            prevEl: ".swiper-nav-prev",
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file if needed -->
+    <title>Tab Highlighting Example</title>
+    <style>
+        /* CSS for header and active link */
+        .header {
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 3;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px;
+        }
+
+        .header ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        .header li {
+            display: inline-block;
+        }
+
+        .header li a {
+            display: block;
+            padding: 20px 20px;
+            text-decoration: none;
+            color: black; /* Change as needed */
+            font-weight: 600;
+        }
+
+        .header li a.active {
+            color: blue; /* Change to your active color */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <a href="index.html" class="logo"><img src="logo.png" alt="Logo"></a>
+        <ul class="menu mt-2" id="menu-responsive">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="about-us.html">Safari Booking</a></li>
+            <li><a href="menu.html">Chambal Safari Booking</a></li>
+            <li><a href="order-online.html">Hotel</a></li>
+            <li><a href="order-online.html">Package</a></li>
+            <li><a href="order-online.html">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuLinks = document.querySelectorAll('.menu a');
+
+    // Function to set active class based on URL
+    function setActiveLink() {
+        const currentPath = window.location.pathname;
+        menuLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath || 
+                (link.getAttribute('href') === '/' && currentPath === '/index.html')) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    setActiveLink(); // Set active link on page load
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Remove 'active' class from all links
+            menuLinks.forEach(item => item.classList.remove('active'));
+            // Add 'active' class to the clicked link
+            this.classList.add('active');
+        });
+    });
+});
+</script>
+
+</body>
+</html>

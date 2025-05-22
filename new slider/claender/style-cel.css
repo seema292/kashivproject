@@ -1,0 +1,89 @@
+
+        .daterangepicker {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 600px; /* Adjust width as needed */
+        }
+        .calendar {
+            float: left;
+            width: 48%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .calendar-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .table-header {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ccc;
+        }
+        .table-header .month {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .table-sub-header {
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .day-off-week {
+            display: inline-block;
+            width: 14.28%; /* 100% / 7 */
+            padding: 5px 0;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+        }
+        .table-condensed {
+            width: 100%;
+        }
+        .body {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .body td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 5px;
+        }
+        .body .date {
+            display: inline-block;
+            width: 100%;
+            cursor: pointer;
+        }
+        .body .active {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .body .start-date {
+            border-radius: 50% 0 0 50%;
+        }
+        .body .end-date {
+            border-radius: 0 50% 50% 0;
+        }
+        .body .in-range {
+            background-color: #e9ecef;
+        }
+        .daterangepicker_input {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .daterangepicker_input input {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .ranges {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .range_inputs {
+            margin-top: 10px;
+        }
+        .cancelBtn {
+            margin-right: 10px;
+        }
+  

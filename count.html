@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont;
+        font-size: 3rem;
+      }
+
+      p {
+        margin: 0;
+      } */
+    </style>
+  </head>
+  <body>
+    <p id="value">0</p>
+    <script>
+      function animateValue(e) {
+        var n = document.getElementById(e);
+        var a = n.innerHTML;
+        setInterval(function () {
+          if (a <= 20) {
+            a++;
+          }
+          n.innerHTML = a;
+        }, 100);
+      }
+      animateValue("value");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select2 Example</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      #e1 {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <select multiple id="e1" style="width: 300px">
+      <option value="1">Venezuela</option>
+      <option value="2">Colombia</option>
+      <option value="3">Argentina</option>
+      <option value="4">Panama</option>
+      <option value="5">Costa Rica</option>
+    </select>
+    <input type="checkbox" id="checkbox" />Select All
+    <input type="button" id="button" value="Check Selected" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#e1").select2();
+
+        $("#checkbox").click(function () {
+          if ($("#checkbox").is(":checked")) {
+            $("#e1 > option").prop("selected", true);
+          } else {
+            $("#e1 > option").prop("selected", false);
+          }
+          $("#e1").trigger("change");
+        });
+
+        $("#button").click(function () {
+          alert($("#e1").val());
+        });
+      });
+    </script>
+  </body>
+</html> -->

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+      }
+      .range-slider {
+        position: relative;
+        width: 314px;
+        height: 10px;
+        border-radius: 15px;
+        background: blue;
+      }
+      .range-slider .progress {
+        position: absolute;
+        left: 25%;
+        right: 0%;
+        height: 100%;
+        border-radius: 15px;
+        background: blue;
+      }
+      .range-slider input[type="range"] {
+        position: absolute;
+        width: 99%;
+        height: 10px;
+        -webkit-appearance: none;
+        pointer-events: none;
+        background: none;
+        outline: none;
+      }
+      .range-slider .range-min::-webkit-slider-thumb {
+        pointer-events: auto;
+        -webkit-appearance: none;
+        width: 22px;
+        height: 22px;
+        background: #fcfcfc 0% 0% no-repeat padding-box;
+        border: 2px solid #8b9e30;
+        border-radius: 20px;
+        opacity: 1;
+      }
+      .range-slider .range-max::-webkit-slider-thumb {
+        pointer-events: auto;
+        -webkit-appearance: none;
+        width: 22px;
+        height: 22px;
+        background: #fcfcfc 0% 0% no-repeat padding-box;
+        border: 2px solid #a22a2a;
+        border-radius: 20px;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="flex relative justify-center items-center h-20 w-full mx-auto rounded"
+    >
+      <div class="min-value numberVal">
+        <input type="number" class="" min="0" max="100" value="25" disabled />
+      </div>
+      &nbsp;
+      <div class="range-slider">
+        <div class="progress"></div>
+        <span class="range-min-wrapper">
+          <input class="range-min" type="range" min="0" max="100" value="25" />
+          <!-- <span class="range-min-value">0</span> -->
+        </span>
+        <span class="range-max-wrapper">
+          <input class="range-max" type="range" min="0" max="100" value="100" />
+          <!-- <span class="range-max-value">100</span> -->
+        </span>
+      </div>
+      &nbsp;
+      <div class="max-value numberVal">
+        <input
+          type="number"
+          class="border text-center"
+          min="0"
+          max="100"
+          value="75"
+          disabled
+        />
+      </div>
+    </div>
+    <script>
+      const range = document.querySelectorAll(".range-slider span input");
+      progress = document.querySelector(".range-slider .progress");
+      let gap = 0.1;
+      const inputValue = document.querySelectorAll(".numberVal input");
+
+      range.forEach((input) => {
+        input.addEventListener("input", (e) => {
+          let minRange = parseInt(range[0].value);
+          let maxRange = parseInt(range[1].value);
+
+          if (maxRange - minRange < gap) {
+            if (e.target.className === "range-min") {
+              range[0].value = maxRange - gap;
+            } else {
+              range[1].value = minRange + gap;
+            }
+          } else {
+            progress.style.left = (minRange / range[0].max) * 100 + "%";
+            progress.style.right = 100 - (maxRange / range[1].max) * 100 + "%";
+            inputValue[0].value = minRange;
+            inputValue[1].value = maxRange;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

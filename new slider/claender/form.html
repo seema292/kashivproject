@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div.list {
+        counter-reset: list-number;
+      }
+      div.list div:before {
+        counter-increment: list-number;
+        content: counter(list-number);
+
+        margin-right: 10px;
+        margin-bottom: 10px;
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        background-color: #d7385e;
+        border-radius: 50%;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="list-wrap">
+      <div class="list">
+        <div>
+          My first item Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Reiciendis beatae expedita libero praesentium rerum. Quia molestias ad
+          quae dolores minima?
+        </div>
+        <div>
+          My second item Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Reiciendis beatae expedita libero praesentium rerum. Quia
+          molestias ad quae dolores minima?
+        </div>
+        <div>
+          My third item Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Reiciendis beatae expedita libero praesentium rerum. Quia molestias ad
+          quae dolores minima?
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

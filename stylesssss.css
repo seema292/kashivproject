@@ -1,0 +1,141 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f2f2f2;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-form {
+  width: 80vw;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.first-container {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://colorlib.com/etc/cf/ContactFrom_v17/images/bg-01.jpg") center center / cover no-repeat;
+  color: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-container div {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.info-container img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.info-container h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.info-container p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cfcfcf;
+  /* lighter gray */
+}
+
+.second-container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.second-container h2 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #333;
+  /* black */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 16px;
+  color: #333;
+  /* black */
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input,
+.form-group textarea {
+  min-height: 55px;
+  border: 1px solid #e6e6e6;
+  /* border */
+  padding: 10px 15px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #00ad5f;
+  /* green */
+  outline: none;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  background: #00ad5f;
+  /* green */
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px auto 0;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #333;
+  /* black */
+}
+
+@media screen and (max-width: 800px) {
+  .contact-form {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .contact-form {
+    flex-direction: column;
+  }
+
+  .first-container {
+    padding: 40px 20px;
+  }
+}
